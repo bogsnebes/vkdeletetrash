@@ -1,0 +1,26 @@
+{
+    "name": "VKdeleteTrash",
+    "description": "Удаляю мусор с ленты ВК",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": ["activeTab", "scripting"],
+    "content_scripts": [
+        {
+        "matches": ["https://vk.com/feed"],
+            "js": ["background.js"]
+        } ],
+    "action": {
+        "default_icon": {
+          "16": "/images/defaultImage.jpg",
+          "32": "/images/defaultImage.jpg",
+          "48": "/images/defaultImage.jpg",
+          "128": "/images/defaultImage.jpg"
+        }
+      },
+      "icons": {
+        "16": "/images/defaultImage.jpg",
+        "32": "/images/defaultImage.jpg",
+        "48": "/images/defaultImage.jpg",
+        "128": "/images/defaultImage.jpg"
+      }
+}
