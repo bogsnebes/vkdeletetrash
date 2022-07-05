@@ -29,21 +29,24 @@ const config = {
     subtree: true
 };
 
-removeElementsByClass(STORIES_HEADER)
-removeElementsByClass(STORIES_MAIN)
-removeElementsByClass(STORIES_FUCKED_SHIT)
-removeElementsByClass(WHAT_IS_NEW)
-removeAdBlocksByClass()
+
+
 
 const callback = async function(observer) {
+    removeElementsByClass(STORIES_HEADER);
+    removeElementsByClass(STORIES_MAIN);
+    removeElementsByClass(STORIES_FUCKED_SHIT);
+    removeElementsByClass(WHAT_IS_NEW);
     removeElementsByClass(REPLIES);
     removeElementsByClass(REPLIES_HEADER);
     removeElementsByClass(RECOMMEND_GROUPS);
     removeElementsByClass(MAYBE_FAMILIAR_HEADER);
     removeElementsByClass(MAYBE_FAMILIAR_MAIN);
     removeElementsByClass(MAYBE_FAMILIAR_SHIT);
+    removeAdBlocksByClass();
 };
 
 const observer = new MutationObserver(callback);
 
-observer.observe(document.documentElement || document.body, config);
+observer.observe(document, config);
+window.onpopstate = callback
