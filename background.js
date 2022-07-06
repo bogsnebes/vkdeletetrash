@@ -47,12 +47,8 @@ div.innerHTML = `<style>
 async function removeAdBlocksByClass() {
     console.log("Рекомендации удалились")
     const elementsMaybe = document.getElementsByClassName("PostActivityCaption");
-    const elementsRecommend = document.getElementsByClassName("PostHeaderActions__action");
     while(elementsMaybe.length > 0){
         elementsMaybe[0].parentNode.parentNode.removeChild(elementsMaybe[0].parentNode);
-    }
-    while(elementsRecommend.length > 0){
-        elementsRecommend[0].parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(elementsRecommend[0].parentNode.parentNode.parentNode.parentNode);
     }
 }
 
